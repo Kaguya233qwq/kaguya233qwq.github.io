@@ -9,7 +9,7 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": ""
+    "version": "6.3.0"
   },
   "dependencies": {
     "@nexmoe/hexo-renderer-inferno": "^0.2.1",
