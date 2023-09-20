@@ -4,34 +4,37 @@
 
 <head>
     
-    <title>文章归档：2023/9 - 沉默的子龙君的博客</title>
+    <title>使用cloudflare搭建万能反向代理 - 沉默的子龙君的博客</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="https://cravatar.cn/avatar/c7fd185f8c967dec20c29c75a40b9e09?s=64" type="image/png" />
-    <meta name="description" content="这是我的个人blog，会写一些杂七杂八的东西堆在这里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="沉默的子龙君的博客">
-<meta property="og:url" content="https://kaguya233qwq.github.io/archives/2023/09/index.html">
+    <meta name="description" content="使用cloudflare搭建万能反向代理注册域名首先你需要注册一个域名，注册的过程这里不再叙述，笔者使用的是在阿里云注册的域名 在cloudflare添加域名解析记录并配置DNS1.点击侧边栏的“网站”选项，并点击“添加站点”按钮 2.等待扫描添加解析记录，可以添加一条用来专门用作反向代理的名叫“proxy”的子域名记录 3.去你的域名注册商后台，选择DNS解析服务，将原来的DNS地址修改为clo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用cloudflare搭建万能反向代理">
+<meta property="og:url" content="https://kaguya233qwq.github.io/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E4%BD%BF%E7%94%A8cloudflare%E6%90%AD%E5%BB%BA%E4%B8%87%E8%83%BD%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index.html">
 <meta property="og:site_name" content="沉默的子龙君的博客">
-<meta property="og:description" content="这是我的个人blog，会写一些杂七杂八的东西堆在这里">
+<meta property="og:description" content="使用cloudflare搭建万能反向代理注册域名首先你需要注册一个域名，注册的过程这里不再叙述，笔者使用的是在阿里云注册的域名 在cloudflare添加域名解析记录并配置DNS1.点击侧边栏的“网站”选项，并点击“添加站点”按钮 2.等待扫描添加解析记录，可以添加一条用来专门用作反向代理的名叫“proxy”的子域名记录 3.去你的域名注册商后台，选择DNS解析服务，将原来的DNS地址修改为clo">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-20T09:04:31.000Z">
+<meta property="article:modified_time" content="2023-09-20T09:39:45.114Z">
 <meta property="article:author" content="沉默的子龙君">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="反向代理">
+<meta property="article:tag" content="cloudflare">
 <meta name="twitter:card" content="summary">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1695202800265">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1695202800257">
     
-    <link rel="stylesheet" href="/css/style.css?v=1695202800265">
+    <link rel="stylesheet" href="/css/style.css?v=1695202800257">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1695202800265">
+            <link rel="stylesheet" href="/custom.css?v=1695202800257">
         
     
 
@@ -40,7 +43,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1695202800265"></script>
+    <script async src="/js/app.js?v=1695202800260"></script>
     
      
 
@@ -230,19 +233,16 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-    <section class="nexmoe-posts">
-    
     <div class="nexmoe-post">
-        <a href="/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E4%BD%BF%E7%94%A8cloudflare%E6%90%AD%E5%BB%BA%E4%B8%87%E8%83%BD%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">
-            
-                <div class="nexmoe-post-cover mdui-ripple"> 
-                    <img src="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1559251606-c623743a6d76?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTN8fHBpbmt8ZW58MHx8fHwxNjYzMDQ0Nzc2&ixlib=rb-1.2.1&w=1920" alt="使用cloudflare搭建万能反向代理" loading="lazy">
-                    <h1>使用cloudflare搭建万能反向代理</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1559251606-c623743a6d76?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTN8fHBpbmt8ZW58MHx8fHwxNjYzMDQ0Nzc2&ixlib=rb-1.2.1&w=1920" alt="使用cloudflare搭建万能反向代理" loading="lazy">
+            <h1>使用cloudflare搭建万能反向代理</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2023年09月20日</a>
         
@@ -257,13 +257,76 @@
     
 </div>
 
-        <article>
-            
-        </article>
+    <h1 id="使用cloudflare搭建万能反向代理"><a href="#使用cloudflare搭建万能反向代理" class="headerlink" title="使用cloudflare搭建万能反向代理"></a>使用cloudflare搭建万能反向代理</h1><h2 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h2><p>首先你需要注册一个域名，注册的过程这里不再叙述，笔者使用的是在阿里云注册的域名</p>
+<h2 id="在cloudflare添加域名解析记录并配置DNS"><a href="#在cloudflare添加域名解析记录并配置DNS" class="headerlink" title="在cloudflare添加域名解析记录并配置DNS"></a>在cloudflare添加域名解析记录并配置DNS</h2><p>1.点击侧边栏的“网站”选项，并点击“添加站点”按钮</p>
+<p>2.等待扫描添加解析记录，可以添加一条用来专门用作反向代理的名叫“proxy”的子域名记录</p>
+<p>3.去你的域名注册商后台，选择DNS解析服务，将原来的DNS地址修改为cloudflare的地址</p>
+<ul>
+<li><p>armfazh.ns.cloudflare.com</p>
+</li>
+<li><p>kelly.ns.cloudflare.com</p>
+</li>
+</ul>
+<p>4.耐心等待DNS解析生效</p>
+<p>这时你的域名就已经成功添加到cloudflare了</p>
+<h2 id="配置Workers"><a href="#配置Workers" class="headerlink" title="配置Workers"></a>配置Workers</h2><p>接下来的操作使用到了<a target="_blank" rel="noopener" href="https://github.com/gaboolic/cloudflare-reverse-proxy">cloudflare-reverse-proxy</a>这个开源项目</p>
+<p>1.点击侧边栏“Workers 和 Pages”选项下的“概述”，点击“创建应用程序”并点击“创建Workers”</p>
+<p>2.输入名称，点击“部署”按钮</p>
+<p>3.点击你刚才创建的workers，点击“快速编辑”按钮</p>
+<p>4.将项目中的_worker.js文件里的代码全部复制粘贴进去</p>
+<p>5.点击部署，这样反向代理就搭建好了</p>
+<h2 id="配置自定义域名"><a href="#配置自定义域名" class="headerlink" title="配置自定义域名"></a>配置自定义域名</h2><p>上面部署完成的地址是cloudflare自动生成的地址，有点不太优雅，如果我们需要配置自己的域名就需要进行以下操作</p>
+<p>1.点击“触发器”选项卡，点击“添加自定义域”按钮</p>
+<p>2.输入刚刚解析到cloudflare的你自己的域名，点击添加即可</p>
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>沉默的子龙君<br>
+        <strong>本文链接：</strong><a href="https://kaguya233qwq.github.io/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E4%BD%BF%E7%94%A8cloudflare%E6%90%AD%E5%BB%BA%E4%B8%87%E8%83%BD%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" title="https:&#x2F;&#x2F;kaguya233qwq.github.io&#x2F;2023&#x2F;09&#x2F;20&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF&#x2F;%E4%BD%BF%E7%94%A8cloudflare%E6%90%AD%E5%BB%BA%E4%B8%87%E8%83%BD%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;kaguya233qwq.github.io&#x2F;2023&#x2F;09&#x2F;20&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF&#x2F;%E4%BD%BF%E7%94%A8cloudflare%E6%90%AD%E5%BB%BA%E4%B8%87%E8%83%BD%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
     </div>
 
-</section>
 
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/cloudflare/" rel="tag">cloudflare</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" rel="tag">反向代理</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
 </div>
         <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
@@ -272,6 +335,13 @@
                       
                         
                           
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8cloudflare%E6%90%AD%E5%BB%BA%E4%B8%87%E8%83%BD%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">使用cloudflare搭建万能反向代理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E5%9F%9F%E5%90%8D"><span class="toc-number">1.1.</span> <span class="toc-text">注册域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8cloudflare%E6%B7%BB%E5%8A%A0%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95%E5%B9%B6%E9%85%8D%E7%BD%AEDNS"><span class="toc-number">1.2.</span> <span class="toc-text">在cloudflare添加域名解析记录并配置DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEWorkers"><span class="toc-number">1.3.</span> <span class="toc-text">配置Workers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="toc-number">1.4.</span> <span class="toc-text">配置自定义域名</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
                           
                           
                       
