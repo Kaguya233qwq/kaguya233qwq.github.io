@@ -25,13 +25,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1695203230347">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1695205253352">
     
-    <link rel="stylesheet" href="/css/style.css?v=1695203230347">
+    <link rel="stylesheet" href="/css/style.css?v=1695205253352">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1695203230347">
+            <link rel="stylesheet" href="/custom.css?v=1695205253352">
         
     
 
@@ -40,7 +40,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1695203230347"></script>
+    <script async src="/js/app.js?v=1695205253352"></script>
     
      
 
@@ -112,7 +112,7 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://i.nexmoe.com/" title="关于博主">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
                 关于博主
@@ -142,7 +142,7 @@
 	<div class="nexmoe-widget nexmoe-social">
 		<a
 			class="mdui-ripple"
-			href="https://nexmoe.com/3145B9F.html"
+			href="/null"
 			target="_blank"
 			mdui-tooltip="{content: 'QQ群'}"
 			style="
@@ -155,7 +155,7 @@
 			></i> </a
 		><a
 			class="mdui-ripple"
-			href="https://space.bilibili.com/20238211"
+			href="/null"
 			target="_blank"
 			mdui-tooltip="{content: '哔哩哔哩'}"
 			style="
@@ -168,7 +168,7 @@
 			></i> </a
 		><a
 			class="mdui-ripple"
-			href="https://github.com/nexmoe/"
+			href="https://github.com/Kaguya233qwq"
 			target="_blank"
 			mdui-tooltip="{content: 'GitHub'}"
 			style="
@@ -181,7 +181,7 @@
 			></i> </a
 		><a
 			class="mdui-ripple"
-			href="https://twitter.com/nexmoe"
+			href="https://twitter.com"
 			target="_blank"
 			mdui-tooltip="{content: 'Twitter'}"
 			style="
@@ -194,7 +194,7 @@
 			></i> </a
 		><a
 			class="mdui-ripple"
-			href="https://nexmoe.com/atom.xml"
+			href="/null"
 			target="_blank"
 			mdui-tooltip="{content: 'RSS'}"
 			style="
@@ -213,6 +213,48 @@
             
             
             
+            <!-- 一言 -->
+<div class="nexmoe-widget-wrap">
+  <h3 class="nexmoe-widget-title">
+    一言
+  </h3>
+  <div class="nexmoe-widget">
+    <ul class="hitokoto-box">
+      <li id="hitokoto_text_parent" class="hitokoto-text" hitokotoCategory="">
+        <a href="#" id="hitokoto_text">
+          
+        </a>
+        <a href="#" id="hitokoto_error_text" style="display: none;">
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  let hitokotoText = document.getElementById('hitokoto_text')
+  let hitokotoErroText = document.getElementById('hitokoto_error_text')
+  let hitokotoCategory = document.getElementById('hitokoto_text_parent').getAttribute('hitokotoCategory')
+  window.addEventListener('load', function () {
+    let url = 'https://v1.hitokoto.cn'
+    if (hitokotoCategory) {
+      url += '?c=' + hitokotoCategory
+    }
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        hitokotoText.innerText = "「 " + data.hitokoto + " 」 from " + data.from
+        hitokotoText.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      })
+      .catch((reason) => {
+        console.error(11, reason)
+        hitokotoText.style.display = 'none'
+        hitokotoErroText.style.display = 'block'
+      })
+  })
+</script>
+        
             
             
             
