@@ -104,8 +104,3 @@ theme: nexmoe
 deploy:
   type: ''
   
-# hexo-admin authentification
-admin:
-  username: marisa_qwq
-  password_hash: $2a$10$BvVRQjFFl6XvE4m9hxiWuubO7jbk4gOs670bklgN4qjyVaavLGYJe
-  secret: 114514
