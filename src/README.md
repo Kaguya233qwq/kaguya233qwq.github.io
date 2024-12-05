@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: home
 title: 沉默的子龙君的博客主页
-heroImage: https://avatars.githubusercontent.com/u/53631287?v=4
+heroImage: /assets/images/miku_dance.gif
 heroText: Kaguya233qwq的Blog
 heroFullScreen: true
 bgImage: /assets/images/bg.jpg
