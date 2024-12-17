@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      vue-property-decorator:
+        specifier: ^9.1.2
+        version: 9.1.2(vue-class-component@7.2.6(vue@3.5.13))(vue@3.5.13)
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.18
@@ -1866,6 +1870,11 @@ packages:
       terser:
         optional: true
 
+  vue-class-component@7.2.6:
+    resolution: {integrity: sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==}
+    peerDependencies:
+      vue: ^2.0.0
+
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
     engines: {node: '>=12'}
@@ -1876,6 +1885,12 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
+
+  vue-property-decorator@9.1.2:
+    resolution: {integrity: sha512-xYA8MkZynPBGd/w5QFJ2d/NM0z/YeegMqYTphy7NJQXbZcuU6FC6AOdUAcy4SXP+YnkerC6AfH+ldg7PDk9ESQ==}
+    peerDependencies:
+      vue: '*'
+      vue-class-component: '*'
 
   vue-router@4.5.0:
     resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
@@ -3951,9 +3966,18 @@ snapshots:
       fsevents: 2.3.3
       sass-embedded: 1.82.0
 
+  vue-class-component@7.2.6(vue@3.5.13):
+    dependencies:
+      vue: 3.5.13
+
   vue-demi@0.14.10(vue@3.5.13):
     dependencies:
       vue: 3.5.13
+
+  vue-property-decorator@9.1.2(vue-class-component@7.2.6(vue@3.5.13))(vue@3.5.13):
+    dependencies:
+      vue: 3.5.13
+      vue-class-component: 7.2.6(vue@3.5.13)
 
   vue-router@4.5.0(vue@3.5.13):
     dependencies:
