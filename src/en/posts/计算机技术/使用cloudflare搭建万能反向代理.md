@@ -1,13 +1,11 @@
 ---
-
-**Title: Setting Up a Universal Reverse Proxy with Cloudflare**  
-**Date: 2023-09-20 17:04:31**  
-**Categories:**  
-- Computer Technology  
-**Tags:**  
+Title: Setting Up a Universal Reverse Proxy with Cloudflare  
+Date: 2023-09-20 17:04:31
+Categories:
+- Computer Technology
+Tags:
 - Reverse Proxy  
 - Cloudflare  
-
 ---
 
 # Setting Up a Universal Reverse Proxy with Cloudflare

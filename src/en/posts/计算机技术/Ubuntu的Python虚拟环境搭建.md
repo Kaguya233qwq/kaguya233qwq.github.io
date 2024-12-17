@@ -1,15 +1,13 @@
 ---
-
-**Title: Setting Up a Python Virtual Environment on Ubuntu**  
-**Author: Zilong**  
-**Date: 2023-09-21 09:21:54**  
-**Categories:**  
+Title: Setting Up a Python Virtual Environment on Ubuntu
+Author: Zilong
+Date: 2023-09-21 09:21:54
+Categories:
 - Computer Technology  
-**Tags:**  
+Tags:
 - Linux  
 - Ubuntu  
 - Python  
-
 ---
 
 ## <p align=center>Why Use a Virtual Environment?</p>
