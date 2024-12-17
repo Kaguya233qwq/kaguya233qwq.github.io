@@ -1,6 +1,6 @@
 ---
 icon: circle-info
-cover: /assets/images/cover3.jpg
+cover: /assets/images/shoujo.png
 ---
 
 99年末出生，结束是新的开始
