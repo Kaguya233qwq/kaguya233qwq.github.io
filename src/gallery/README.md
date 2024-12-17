@@ -3,3 +3,7 @@
 欢迎来到我的画廊，下面展示了我的一些图片：
 
 <Gallery />
+
+<script setup>
+import Gallery from "@source/.vuepress/components/Gallery.vue";
+</script>

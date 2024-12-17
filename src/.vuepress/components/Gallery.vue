@@ -10,62 +10,75 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { defineComponent, ref, onMounted } from 'vue';
 import { Image } from './types';  // 引入类型定义
 
-@Component
-export default class Gallery extends Vue {
-    images: Image[] = []; // 当前显示的图片列表
-    allImages: Image[] = []; // 所有图片列表
-    loading: boolean = false; // 加载状态
-    perLoad: number = 6; // 每次加载图片的数量
-    loaded: number = 0; // 已加载的图片数量
+export default defineComponent({
+    name: 'Gallery',
+    setup() {
+        // 定义响应式状态
+        const images = ref<Image[]>([]);  // 当前显示的图片列表
+        const allImages = ref<Image[]>([]);  // 所有图片列表
+        const loading = ref(false);  // 加载状态
+        const perLoad = 6;  // 每次加载图片的数量
+        const loaded = ref(0);  // 已加载的图片数量
 
-    mounted() {
-        this.loadImages();
-        this.setupScrollListener();
-    }
+        // 在组件挂载后执行
+        onMounted(() => {
+            loadImages();
+            setupScrollListener();
+        });
 
-    // 加载图片列表
-    loadImages() {
-        const imageList: string[] = require.context('@/public/images/gallery', false, /\.(jpg|jpeg|png|gif)$/).keys();
-        this.allImages = imageList.map((src, index) => ({
-            src: `/images/gallery${src.replace('./', '/')}`,
-            alt: `Image ${index + 1}`,
-        }));
-        this.loadMoreImages(); // 加载第一批图片
-    }
-
-    // 处理滚动加载更多图片
-    setupScrollListener() {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const clientHeight = document.documentElement.clientHeight;
-
-        if (scrollHeight - scrollTop <= clientHeight + 100) {
-            // 当页面接近底部时加载更多
-            this.loadMoreImages();
+        // 加载图片列表
+        function loadImages() {
+            // 使用 require.context 加载图片路径
+            const imageList: string[] = require.context('@/public/assets/gallery', false, /\.(jpg|jpeg|png|gif)$/).keys();
+            allImages.value = imageList.map((src, index) => ({
+                src: `/assets/gallery${src.replace('./', '/')}`,
+                alt: `Image ${index + 1}`,
+            }));
+            loadMoreImages();  // 加载第一批图片
         }
-    }
 
-    // 加载更多图片
-    loadMoreImages() {
-        if (this.loading) return;
-        this.loading = true;
+        // 设置滚动监听器
+        function setupScrollListener() {
+            window.addEventListener('scroll', handleScroll);
+        }
 
-        // 模拟延迟加载
-        setTimeout(() => {
-            const nextImages = this.allImages.slice(this.loaded, this.loaded + this.perLoad);
-            this.images = [...this.images, ...nextImages];
-            this.loaded += nextImages.length;
-            this.loading = false;
-        }, 1000);
-    }
-}
+        // 滚动事件处理函数
+        function handleScroll() {
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const clientHeight = document.documentElement.clientHeight;
+
+            if (scrollHeight - scrollTop <= clientHeight + 100) {
+                // 当页面接近底部时加载更多
+                loadMoreImages();
+            }
+        }
+
+        // 加载更多图片
+        function loadMoreImages() {
+            if (loading.value) return;
+            loading.value = true;
+
+            // 模拟延迟加载
+            setTimeout(() => {
+                const nextImages = allImages.value.slice(loaded.value, loaded.value + perLoad);
+                images.value = [...images.value, ...nextImages];
+                loaded.value += nextImages.length;
+                loading.value = false;
+            }, 1000);
+        }
+
+        // 返回响应式数据和方法
+        return {
+            images,
+            loading,
+            loadMoreImages,
+        };
+    },
+});
 </script>
 
 <style scoped>

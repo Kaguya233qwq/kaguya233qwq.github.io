@@ -9,7 +9,7 @@ heroFullScreen: true
 bgImage: /assets/images/bg.jpg
 tagline: 啊哈哈哈哈哈哈哈哈
 projects:
-  - icon: project
+  - icon: https://img1.baidu.com/it/u=3563761161,679242917&fm=253&fmt=auto&app=138&f=PNG?w=360&h=360
     name: Nonebot 光遇插件
     desc: 基于nonebot2的光遇每日攻略查询插件
     link: https://github.com/Kaguya233qwq/nonebot_plugin_sky
@@ -29,7 +29,7 @@ projects:
   #   desc: 文章详细描述
   #   link: https://你的文章链接
 
-  - icon: friend
+  - icon: https://avatars.githubusercontent.com/u/168275411?v=4
     name: 云深不知处
     desc: 一个热爱技术学习的很可爱的佬
     link: https://github.com/yunshenya
