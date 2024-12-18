@@ -1,9 +1,14 @@
-# 我的画廊页面
+---
+footer: Never say never
+---
 
-欢迎来到我的画廊，下面展示了我的一些图片：
+# 画廊
 
+<Sakura />
 <Gallery />
 
 <script setup>
 import Gallery from "@source/.vuepress/components/Gallery.vue";
+import Sakura from "@source/.vuepress/components/Sakura.vue";
 </script>
+
