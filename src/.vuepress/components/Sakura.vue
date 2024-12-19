@@ -98,16 +98,6 @@ export default defineComponent({
         const show = ref(true); // Boolean to control showing the animation
         const zIndex = ref(0); // Canvas zIndex style
 
-        const SEASON_IMG = {
-            replace: false,
-            httpUrl: {
-                spring: '/path/to/spring.png',
-                summer: '/path/to/summer.png',
-                autumn: '/path/to/autumn.png',
-                winter: '/path/to/winter.png',
-            }
-        };
-
         // Random generator function
         const getRandom = (option: string): any => {
             let ret: any;
@@ -254,5 +244,6 @@ export default defineComponent({
     position: fixed;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 </style>
